@@ -17,4 +17,5 @@ class MainPageController extends AbstractController
            'tags' => $tagRepository->findAll()
         ]);
     }
+    
 }

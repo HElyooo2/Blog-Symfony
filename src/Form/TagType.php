@@ -14,6 +14,7 @@ class TagType extends AbstractType
         $builder
             ->add('name')
             ->add('categ')
+            ->add('description')
         ;
     }
 

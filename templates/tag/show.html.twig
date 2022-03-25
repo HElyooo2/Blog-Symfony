@@ -3,21 +3,29 @@
 {% block title %}Tag{% endblock %}
 
 {% block body %}
-    <h1>Tag: {{ tag.name }} </h1>
+    <h3>{{ tag.name }} </h3>
+  
     
     <table class="table">
-        <h3>Liste des articles comprenant ce tag:</h3>
         <tbody>
-            <caption>Liste des articles comprenant ce tag:</caption>
+            {# <caption>Liste des articles comprenant ce tag:</caption> #}
+            <tr>
+                <th>Description: </th>
+                <td >{{ tag.description }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td ><strong>Liste des posts possédant ce tag:</strong></td>
+            </tr>
             {% for post in tag.posts %} 
             <tr>
-                <th>Nom: </th>
+                <th>Post n°{{post.id}}: </th>
                 <td ><a href="/post/{{ post.id }}">{{ post.nom }}</a></td>
             </tr>
-             {% endfor %}
             
+             {% endfor %}      
         </tbody>
     </table>
 
-    <a href="{{ path('app_tag_index') }}">Liste de tous les tags</a>
+    
 {% endblock %}

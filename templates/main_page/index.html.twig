@@ -16,8 +16,8 @@
             <h2><a href="{{ path('app_post_show', {'id': post.id}) }}">{{ post.title }} </a></h2>
             <h5>Posté le: {{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</h5>
             {% for tag in post.tags %}<a href="/tag/{{ tag.id }}" class="badge {{ tag.categ }}">{{ tag.name }}</a>  {% endfor %}
-            <div class="fakeimg" style="height:200px;" href="{{ post.image }}">Image</div>
-            <p>{{ post.content|slice(0, 255) }}...</p>
+            <!-- <div class="fakeimg" style="height:200px;" href="{{ post.image }}">Image</div> -->
+            <p>{{ post.content|slice(0, 255) }}...</p><a href="/post/{{ post.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lire la suite</a>
           </div>
   
 
@@ -30,19 +30,14 @@
     <div class="rightcolumn">
       <div class="card">
         <h2>A propos:</h2>
-        <div class="fakeimg" style="height:100px;"><img src="\images\moimeme.jpg"  class="img-fluid" alt="c moi"></div>
+        <div class="fakeimg"><img src="\images\moimeme.jpg"  class="img-fluid" alt="c moi"></div>
         <p>Bonjour, je m'appelle Hélio Gaudé et je suis étudiant en BTS SIO. Voici mon <a href="google.com" >CV</a>.</p>
       </div>
-      <div class="card">
-        <h3>Posts récents test</h3>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div>
-      </div>
+      
       <div class="card">
         <h3>Vouvez me suivre ici:</h3>
-        <p><a href="gogle.com">Linkdin</a> ajouter logo</p>
-        <p><a href="gogle.com">Github</a> ajouter logo</p>
+        <p><a href="gogle.com"><img src="\logos\twiter.png"  class="img-fluid" alt="c moi"></a> ajouter logo</p>
+        <p><a href="gogle.com"><i class="fa fa-github" aria-hidden="true"></i>Github</a> ajouter logo</p>
         <p><a href="gogle.com">Twitter</a> ajouter logo</p>
       </div>
     </div>

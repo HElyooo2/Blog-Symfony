@@ -36,10 +36,15 @@ class Post
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $categorie;
 
+   
+
+
 
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        
+
     }
 
     public function getId(): ?int
@@ -139,6 +144,30 @@ class Post
     public function setCategorie(?string $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, bloc>
+     */
+    public function getBlocs(): Collection
+    {
+        return $this->blocs;
+    }
+
+    public function addBloc(bloc $bloc): self
+    {
+        if (!$this->blocs->contains($bloc)) {
+            $this->blocs[] = $bloc;
+        }
+
+        return $this;
+    }
+
+    public function removeBloc(bloc $bloc): self
+    {
+        $this->blocs->removeElement($bloc);
 
         return $this;
     }

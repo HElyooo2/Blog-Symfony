@@ -23,7 +23,7 @@ class TagController extends AbstractController
     }
 
     #[Route('/admin/tag/new', name: 'app_tag_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, TagRepository $tagRepository): Response
+    public function new(Request $request, TagRepository $tagRepository,PostRepository $postRepository): Response
     {
         $tag = new Tag();
         $form = $this->createForm(TagType::class, $tag);

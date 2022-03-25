@@ -24,6 +24,9 @@ class Tag
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $categ;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $description;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -83,6 +86,18 @@ class Tag
     public function setCateg(?string $categ): self
     {
         $this->categ = $categ;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

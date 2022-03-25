@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div id="sidebar"></div>  
+
+  <div class="row">
+    
+    <div class="leftcolumn">
+      
+
+        <table class="table">
+        
+            <tbody>
+                <caption>Liste des articles comprenant ce tag:</caption>
+                {% for post in posts %} 
+                <tr>
+                    <th>Nom: </th>
+                    <td ><a href="/post/{{ post.id }}">{{ post.nom }}</a></td>
+                </tr>
+                
+                 {% endfor %}      
+            </tbody>
+        </table>
+
+{% endblock %}

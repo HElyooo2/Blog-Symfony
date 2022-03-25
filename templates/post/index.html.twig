@@ -24,7 +24,7 @@
                 <td>{{ post.id }}</td>
                 <td>{{ post.nom }}</td>
                 <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ post.content }}</td>
+                <td>{{ post.content|slice(0, 255) }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.image }}</td>
                 <td>
