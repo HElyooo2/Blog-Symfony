@@ -36,6 +36,9 @@ class Post
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $categorie;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $description;
+
    
 
 
@@ -168,6 +171,18 @@ class Post
     public function removeBloc(bloc $bloc): self
     {
         $this->blocs->removeElement($bloc);
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

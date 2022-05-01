@@ -19,7 +19,7 @@ class Bloc
     private $nom;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $ccorps;
+    private $corps;
 
 
     public function __construct()
@@ -44,14 +44,14 @@ class Bloc
         return $this;
     }
 
-    public function getCcorps(): ?string
+    public function getcorps(): ?string
     {
-        return $this->ccorps;
+        return $this->corps;
     }
 
-    public function setCcorps(string $ccorps): self
+    public function setcorps(string $corps): self
     {
-        $this->ccorps = $ccorps;
+        $this->corps = $corps;
 
         return $this;
     }
