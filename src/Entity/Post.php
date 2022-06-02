@@ -39,6 +39,9 @@ class Post
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;
 
+    #[ORM\OneToMany(mappedBy: 'post', targetEntity: Document::class)]
+    private $Documents;
+
    
 
 
@@ -46,6 +49,7 @@ class Post
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->Documents = new ArrayCollection();
         
 
     }
@@ -183,6 +187,36 @@ class Post
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Document>
+     */
+    public function getDocuments(): Collection
+    {
+        return $this->Documents;
+    }
+
+    public function addDocument(Document $document): self
+    {
+        if (!$this->Documents->contains($document)) {
+            $this->Documents[] = $document;
+            $document->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDocument(Document $document): self
+    {
+        if ($this->Documents->removeElement($document)) {
+            // set the owning side to null (unless already changed)
+            if ($document->getPost() === $this) {
+                $document->setPost(null);
+            }
+        }
 
         return $this;
     }

@@ -124,3 +124,20 @@ body {
 .card {
   display: block !important;
 }
+
+
+table.e4,
+td.e4,tr.e4 {
+    border: 2px solid #333;
+    text-align: center;
+}
+
+td {
+  max-width: 800px;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}

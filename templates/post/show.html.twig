@@ -8,7 +8,7 @@
   <div class="row">
     <div class="leftcolumn">
         <div class="card">
-            <table class="table">
+            <table class="table1">
                 <tbody>
     
                     <tr>
@@ -23,13 +23,10 @@
                     {% endif %}
                     <tr>
                         <th></th>                        
-                        <td>{{ post.content|markdown_to_html }}</td>
+                        <td style="width:100px;">{{ post.content|markdown_to_html }}</td>
                     </tr>
                     
-                    <tr>
-                        <th>Image</th>
-                        <td>{{ post.image }}</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div
@@ -38,18 +35,11 @@
     </div>
     <div class="rightcolumn">
       
-      <div class="Ressources:">
-        <h3>Vouvez me suivre ici:</h3>
-        <p><a href="gogle.com">Repository GitHub</a></p>
-        <p><a href="gogle.com">Sujet</a></p>
-        <p><a href="gogle.com">Trello</a></p>
-      </div>
       <div class="card">
-        <h3>Vouvez me suivre ici:</h3>
-        <p><a href="gogle.com">Linkdin</a> ajouter logo</p>
-        <p><a href="gogle.com">Github</a> ajouter logo</p>
-        <p><a href="gogle.com">Twitter</a> ajouter logo</p>
+        <h3>Documents</h3>
+        {% for document in post.Documents %}<p><a href="{{ document.link }}">{{ document.libelle }}</a></p>  {% endfor %}
       </div>
+      
     </div>
   </div>
 

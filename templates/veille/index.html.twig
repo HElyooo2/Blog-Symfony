@@ -3,10 +3,12 @@
 {% block title %}Hello VeilleController!{% endblock %}
 
 {% block body %}
-{{ dump(rss.channel)}}
+
+
+{# {{ dump(rss.channel)}}
 {% for item in rss.channel.item %}
 {{ dump(item)}}
     {{ item.title }}
     {{ item.link }}
-{% endfor %}
+{% endfor %} #}
 {% endblock %}
